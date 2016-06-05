@@ -6,7 +6,7 @@ Cuba.plugin Cuba::Safe
 
 Cuba.define do
   on get do
-    on bookmarks do
+    on 'bookmarks' do
       run API::Bookmark
     end
   end
