@@ -11,7 +11,7 @@ module API
               res.write Repositories::Bookmark.find id
             rescue Mongoid::Errors::DocumentNotFound
               res.status = 404
-              res.write "Document not found."
+              res.write 'Document not found.'
             end
           end
         end
