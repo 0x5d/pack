@@ -3,4 +3,6 @@ machine:
     version: 2.3.1
 test:
   override:
-    - rubocop
+    - bundle exec rubocop:
+      environment:
+        RACK_ENV: test
