@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.3.1"
+ruby '2.3.1'
 
 gem 'cuba', '~> 3.6.0'
 gem 'mongoid', '~> 5.1.0'
