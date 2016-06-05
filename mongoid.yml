@@ -3,4 +3,4 @@ development:
     default:
       database: <%= ENV['PACK_DATABASE'] %>
       hosts:
-        - <%= ENV['PACK_DATABASE_URL'] %>:27017
+        - <%= "#{ENV['PACK_DATABASE_HOST']}:#{ENV['PACK_DATABASE_PORT']}" %>

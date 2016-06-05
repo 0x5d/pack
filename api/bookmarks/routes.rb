@@ -1,3 +1,5 @@
+require "./data/repositories/bookmark"
+
 module API
   class Bookmark < Cuba
     define do
@@ -6,7 +8,7 @@ module API
       on get do
         on ":id" do |id|
           on root do
-            res.write "This is bookmark No. #{id}"
+            res.write Repositories::Bookmark.find id
           end
         end
       end
