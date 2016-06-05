@@ -1,12 +1,11 @@
-require "./data/repositories/bookmark"
+require './data/repositories/bookmark'
 
 module API
+  # Bookmark defines the routes for the bookmark resource.
   class Bookmark < Cuba
     define do
-      platform = vars[:platform]
-
       on get do
-        on ":id" do |id|
+        on ':id' do |id|
           on root do
             res.write Repositories::Bookmark.find id
           end

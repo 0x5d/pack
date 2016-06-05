@@ -1,0 +1,6 @@
+machine:
+  ruby:
+    version: 3.2.1
+test:
+  override:
+    - rubocop

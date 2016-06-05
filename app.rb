@@ -1,5 +1,5 @@
-require "mongoid"
+require 'mongoid'
 
-require "./api/routes"
+require './api/routes'
 
-Mongoid.load!("./mongoid.yml")
+Mongoid.load!('./mongoid.yml')
