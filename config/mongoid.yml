@@ -1,15 +1,11 @@
 development:
   clients:
     default:
-      database: <%= ENV['PACK_DATABASE'] %>
-      hosts:
-        - <%= "#{ENV['PACK_DATABASE_HOST']}:#{ENV['PACK_DATABASE_PORT']}" %>
+      uri: <%= ENV['PACK_DATABASE_URI'] %>
 test:
   clients:
     default:
-      database: <%= ENV['PACK_DATABASE'] %>
-      hosts:
-        - <%= "#{ENV['PACK_DATABASE_HOST']}:#{ENV['PACK_DATABASE_PORT']}" %>
+      uri: <%= ENV['PACK_DATABASE_URI'] %>
 production:
   clients:
     default:
