@@ -2,4 +2,4 @@ require 'mongoid'
 
 require_relative './api/routes'
 
-Mongoid.load!('./mongoid.yml')
+Mongoid.load!('./config/mongoid.yml')
