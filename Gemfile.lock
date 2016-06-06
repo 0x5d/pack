@@ -13,8 +13,11 @@ GEM
     ast (2.2.0)
     bson (4.1.1)
     builder (3.2.2)
+    clap (1.0.0)
     cuba (3.6.0)
       rack (~> 1.6.0)
+    cutest (1.2.3)
+      clap
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.9.0)
@@ -30,7 +33,10 @@ GEM
       ast (~> 2.2)
     powerpack (0.1.1)
     rack (1.6.4)
+    rack-test (0.6.3)
+      rack (>= 1.0)
     rainbow (2.1.0)
+    rake (11.1.2)
     rubocop (0.40.0)
       parser (>= 2.3.1.0, < 3.0)
       powerpack (~> 0.1)
@@ -48,8 +54,14 @@ PLATFORMS
 
 DEPENDENCIES
   cuba (~> 3.6.0)
+  cutest (~> 1.2.3)
   mongoid (~> 5.1.0)
+  rack-test (~> 0.6.3)
+  rake (~> 11.1.2)
   rubocop (~> 0.40.0)
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.12.5
