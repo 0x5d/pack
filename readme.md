@@ -1,4 +1,6 @@
 # Pack
+[![CircleCI](https://circleci.com/gh/castillobg/pack.svg?style=svg)](https://circleci.com/gh/castillobg/pack)
+
 Organize your links semantically and hierarchically!
 
 ## Run it
