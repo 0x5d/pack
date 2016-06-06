@@ -4,3 +4,9 @@ development:
       database: <%= ENV['PACK_DATABASE'] %>
       hosts:
         - <%= "#{ENV['PACK_DATABASE_HOST']}:#{ENV['PACK_DATABASE_PORT']}" %>
+test:
+  clients:
+    default:
+      database: <%= ENV['PACK_DATABASE'] %>
+      hosts:
+        - <%= "#{ENV['PACK_DATABASE_HOST']}:#{ENV['PACK_DATABASE_PORT']}" %>
