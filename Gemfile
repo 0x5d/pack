@@ -5,6 +5,7 @@ ruby '2.3.1'
 gem 'cuba', '~> 3.6.0'
 gem 'mongoid', '~> 5.1.0'
 gem 'rake', '~> 11.1.2'
+gem 'json', '~> 1.8'
 
 group :test do
   gem 'rack-test', '~> 0.6.3', require: false
