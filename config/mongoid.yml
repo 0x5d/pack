@@ -1,6 +1,8 @@
 development:
   clients:
     default:
+<<<<<<< HEAD
+<<<<<<< HEAD
       database: <%= ENV['PACK_DATABASE'] %>
       hosts:
         - <%= "#{ENV['PACK_DATABASE_HOST']}:#{ENV['PACK_DATABASE_PORT']}" %>
@@ -10,6 +12,20 @@ test:
       database: <%= ENV['PACK_DATABASE'] %>
       hosts:
         - <%= "#{ENV['PACK_DATABASE_HOST']}:#{ENV['PACK_DATABASE_PORT']}" %>
+=======
+      uri: <%= ENV['PACK_DATABASE_URI'] %>
+test:
+  clients:
+    default:
+      uri: <%= ENV['PACK_DATABASE_URI'] %>
+>>>>>>> bbdf127fdcf8453d5594fe72485873d79465af6e
+=======
+      uri: <%= ENV['PACK_DATABASE_URI'] %>
+test:
+  clients:
+    default:
+      uri: <%= ENV['PACK_DATABASE_URI'] %>
+>>>>>>> fa8dc329e97d65a36891b1d5be11677ea4623e93
 production:
   clients:
     default:
