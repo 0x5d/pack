@@ -18,7 +18,8 @@ module API
       end
 
       on post do
-        res.write "papaya"
+        pack = JSON.parse(req.body.read);
+        res.write Repositories::Bookmark.create(pack).to_json
       end
     end
   end
