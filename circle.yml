@@ -6,6 +6,10 @@ test:
     - bundle exec rubocop
 deployment:
   staging:
+    branch: develop
+    heroku:
+      appname: pack-staging
+  production:
     branch: master
     heroku:
       appname: pack
