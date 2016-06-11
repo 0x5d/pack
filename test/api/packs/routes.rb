@@ -24,6 +24,17 @@ scope do
     assert defined?(last_response.body['_id'])
   end
 
+  test 'Returns 400 when name is missing' do |config|
+    pack = {
+      parent_pack_id: 0,
+      user_id: 0
+    }.to_json
+
+    request '/packs', config[:post].merge(input: pack)
+
+    assert_equal 400, last_response.status
+  end
+
   test 'Creates a pack within a pack' do |config|
     pack = {
       name: 'Paco',
@@ -35,13 +46,13 @@ scope do
     assert defined?(last_response.body['_id'])
   end
 
-  test 'Returns 400 when name is missing' do |config|
+  test 'Returns 400 when name is missing for nested pack' do |config|
     pack = {
       parent_pack_id: 0,
       user_id: 0
     }.to_json
 
-    request '/packs', config[:post].merge(input: pack)
+    request '/packs/123', config[:post].merge(input: pack)
 
     assert_equal 400, last_response.status
   end
