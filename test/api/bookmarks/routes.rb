@@ -16,7 +16,7 @@ scope do
   test 'creates a bookmark' do |config|
     bookmark = {
       url: 'www.google.com',
-      name: 'Google home',
+      name: 'Google home'
     }.to_json
 
     request '/bookmarks', config[:post].merge(input: bookmark)
@@ -29,7 +29,7 @@ scope do
   test 'creates and gets a bookmark' do |config|
     bookmark = {
       url: 'es.stackoverflow.com/',
-      name: 'stackoverflow home page',
+      name: 'stackoverflow home page'
     }.to_json
 
     request '/bookmarks', config[:post].merge(input: bookmark)
