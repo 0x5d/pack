@@ -5,7 +5,7 @@ module Repositories
   class Bookmark
     include Mongoid::Document
 
-    field :email, type: String
-    field :password_digest, type: String
+    field :url, type: String
+    field :name, type: String
   end
 end
