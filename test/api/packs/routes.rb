@@ -16,11 +16,21 @@ scope do
   test 'Creates a pack' do |config|
     pack = {
       name: 'Paco',
-      parent_pack_id: 0,
-      user_id: 0
+      parent_pack_id: 0
     }.to_json
 
     request '/packs', config[:post].merge(input: pack)
+
+    assert defined?(last_response.body['_id'])
+  end
+
+  test 'Creates a pack within a pack' do |config|
+    pack = {
+      name: 'Paco',
+      parent_pack_id: 0
+    }.to_json
+
+    request '/packs/123', config[:post].merge(input: pack)
 
     assert defined?(last_response.body['_id'])
   end

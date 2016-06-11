@@ -1,15 +1,19 @@
-require 'mongoid'
+require_relative '../adapters/mongo/pack'
+require_relative './errors/not_found'
 
 module Repositories
   # Pack is a repository for packs.
   class Pack
-    include Mongoid::Document
+    def self.create(pack)
+      Adapters::Pack.create!(pack)
+    rescue Mongoid::Errors::Validations => error
+      raise ArgumentError, error.message
+    end
 
-    field :name, type: String
-    field :user_id, type: String
-    field :parent_pack_id, type: String
-
-    validates :name, presence: true
-    validates :user_id, presence: true
+    def self.find(id)
+      Adapters::Pack.find id
+    rescue Mongoid::Errors::DocumentNotFound
+      raise Errors::NotFound, "Pack with id #{id} not found"
+    end
   end
 end
