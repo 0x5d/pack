@@ -5,7 +5,11 @@ module Repositories
   class Pack
     include Mongoid::Document
 
-    field :email, type: String
-    field :password_digest, type: String
+    field :name, type: String
+    field :user_id, type: String
+    field :parent_pack_id, type: String
+
+    validates :name, presence: true
+    validates :user_id, presence: true
   end
 end
