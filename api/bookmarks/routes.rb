@@ -18,15 +18,17 @@ module API
         end
       end
       on post do
-        bookmark = JSON.parse(req.body.read)
-        unless bookmark['url']
-          res.status = 404
-          res.write 'Url is mandatory'
+        on root do
+          bookmark = JSON.parse(req.body.read)
+          unless bookmark['url']
+            res.status = 404
+            res.write 'Url is mandatory'
+          end
+          puts bookmark['url']
+          # TODO: add to the loged user
+          res.write Repositories::Bookmark
+            .create(url: bookmark['url'], name: bookmark['name']).to_json
         end
-        puts bookmark['url']
-        # TODO: add to the loged user
-        res.write Repositories::Bookmark
-          .create(url: bookmark['url'], name: bookmark['name']).to_json
       end
     end
   end
