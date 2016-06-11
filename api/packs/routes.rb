@@ -9,9 +9,9 @@ module API
           on get do
             begin
               res.write Repositories::Pack.find id
-            rescue Repositories::Errors::NotFound
+            rescue Repositories::Errors::NotFound => error
               res.status = 404
-              res.write 'Document not found.'
+              res.write error.message
             end
           end
 
