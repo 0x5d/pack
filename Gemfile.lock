@@ -55,6 +55,7 @@ PLATFORMS
 DEPENDENCIES
   cuba (~> 3.6.0)
   cutest (~> 1.2.3)
+  json (~> 1.8)
   mongoid (~> 5.1.0)
   rack-test (~> 0.6.3)
   rake (~> 11.1.2)
