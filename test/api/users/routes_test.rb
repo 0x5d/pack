@@ -18,6 +18,15 @@ scope do
     assert defined?(last_response.body['_id'])
   end
 
+  test 'returns an existing user' do
+    user = Repositories::User.create(name: 'Paco', email: 'p@co.co')
+
+    get "users/#{user._id}"
+
+    response = JSON.parse(last_response.body)
+    assert_equal user._id, BSON::ObjectId.from_string(response['_id']['$oid'])
+  end
+
   test 'returns 400 when name is missing' do |config|
     user = { email: 'p@co.co' }.to_json
 

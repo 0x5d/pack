@@ -31,7 +31,7 @@ scope do
   test 'gets a bookmark' do
     bookmark = Repositories::Bookmark.create(url: 'es.stackoverflow.com/',
                                              name: 'stackoverflow home page')
-    get '/bookmarks/' + bookmark['_id']
+    get "/bookmarks/#{bookmark['_id']}"
     assert_equal 200, last_response.status
     assert defined?(last_response.body['_id'])
     assert defined?(last_response.body['url'])

@@ -20,7 +20,7 @@ module API
         on root do
           on get do
             begin
-              res.write Repositories::User.find id
+              res.write Repositories::User.find(id).to_json
             rescue Repositories::Errors::NotFound => error
               res.status = 404
               res.write error.message
