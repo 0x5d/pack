@@ -6,6 +6,10 @@ test:
   clients:
     default:
       uri: <%= ENV['PACK_DATABASE_URI'] %>
+staging:
+  clients:
+    default:
+      uri: <%= ENV['PACK_DATABASE_URI'] %>
 production:
   clients:
     default:
