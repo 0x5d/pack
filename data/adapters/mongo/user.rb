@@ -1,7 +1,7 @@
 require 'mongoid'
 
 module Adapters
-  # Pack is a MongoDB adapter for Packs.
+  # User is a MongoDB adapter for Users.
   class User
     include Mongoid::Document
 
