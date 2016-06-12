@@ -7,13 +7,13 @@ setup do
 end
 
 scope do
-  test 'Returns 404 when pack is not found' do
+  test 'returns 404 when pack is not found' do
     get '/packs/123'
 
     assert_equal 404, last_response.status
   end
 
-  test 'Creates a pack' do |config|
+  test 'creates a pack' do |config|
     pack = {
       name: 'Paco',
       parent_pack_id: 0
@@ -24,7 +24,7 @@ scope do
     assert defined?(last_response.body['_id'])
   end
 
-  test 'Returns 400 when name is missing' do |config|
+  test 'returns 400 when name is missing' do |config|
     pack = {
       parent_pack_id: 0,
       user_id: 0
@@ -35,7 +35,7 @@ scope do
     assert_equal 400, last_response.status
   end
 
-  test 'Creates a pack within a pack' do |config|
+  test 'creates a pack within a pack' do |config|
     pack = {
       name: 'Paco',
       parent_pack_id: 0
@@ -46,7 +46,7 @@ scope do
     assert defined?(last_response.body['_id'])
   end
 
-  test 'Returns 400 when name is missing for nested pack' do |config|
+  test 'returns 400 when name is missing for nested pack' do |config|
     pack = {
       parent_pack_id: 0,
       user_id: 0

@@ -40,7 +40,6 @@ scope do
     get_response = JSON.parse(last_response.body)
     assert_equal 'es.stackoverflow.com/', get_response['url']
     assert_equal 'stackoverflow home page', get_response['name']
-    assert_equal bookmark['_id'],
-                 BSON::ObjectId.from_string(get_response['_id']['$oid'])
+    assert_equal bookmark['_id'], BSON::ObjectId.from_string(get_response['_id']['$oid'])
   end
 end

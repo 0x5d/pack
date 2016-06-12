@@ -11,4 +11,5 @@ group :test do
   gem 'rack-test', '~> 0.6.3', require: false
   gem 'rubocop', '~> 0.40.0', require: false
   gem 'cutest', '~> 1.2.3', require: false
+  gem 'simplecov', require: false
 end

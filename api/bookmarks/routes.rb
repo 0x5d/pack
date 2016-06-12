@@ -25,8 +25,7 @@ module API
             res.status = 404
             res.write 'Url is mandatory'
           end
-          puts bookmark['url']
-          # TODO: add to the loged user
+          # TODO: add to the logged user
           res.write Repositories::Bookmark
             .create(url: bookmark['url'], name: bookmark['name']).to_json
         end

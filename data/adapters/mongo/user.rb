@@ -2,15 +2,13 @@ require 'mongoid'
 
 module Adapters
   # Pack is a MongoDB adapter for Packs.
-  class Pack
+  class User
     include Mongoid::Document
 
     field :name, type: String
-    field :user_id, type: String
-    field :parent_pack_id, type: String
+    field :email, type: String
 
     validates :name, presence: true
-    # TODO: handle when there are users
-    # validates :user_id, presence: true
+    validates :email, presence: true, format: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   end
 end
