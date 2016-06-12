@@ -18,7 +18,6 @@ GEM
       rack (~> 1.6.0)
     cutest (1.2.3)
       clap
-    docile (1.1.5)
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.9.0)
@@ -45,11 +44,6 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
-    simplecov (0.11.2)
-      docile (~> 1.1.0)
-      json (~> 1.8)
-      simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.0)
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -66,7 +60,6 @@ DEPENDENCIES
   rack-test (~> 0.6.3)
   rake (~> 11.1.2)
   rubocop (~> 0.40.0)
-  simplecov
 
 RUBY VERSION
    ruby 2.3.1p112
