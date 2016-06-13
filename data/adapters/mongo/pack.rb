@@ -1,3 +1,5 @@
+require 'mongoid'
+
 module Adapters
   # Pack is a MongoDB adapter for Packs.
   class Pack

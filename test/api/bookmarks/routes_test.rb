@@ -31,7 +31,7 @@ scope do
   test 'gets a bookmark' do
     bookmark = Repositories::Bookmark.create(url: 'es.stackoverflow.com/',
                                              name: 'stackoverflow home page')
-    get '/bookmarks/' + bookmark['_id']
+    get "/bookmarks/#{bookmark['_id']}"
     assert_equal 200, last_response.status
     assert defined?(last_response.body['_id'])
     assert defined?(last_response.body['url'])
@@ -40,7 +40,6 @@ scope do
     get_response = JSON.parse(last_response.body)
     assert_equal 'es.stackoverflow.com/', get_response['url']
     assert_equal 'stackoverflow home page', get_response['name']
-    assert_equal bookmark['_id'],
-                 BSON::ObjectId.from_string(get_response['_id']['$oid'])
+    assert_equal bookmark['_id'], BSON::ObjectId.from_string(get_response['_id']['$oid'])
   end
 end
