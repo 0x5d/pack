@@ -16,7 +16,7 @@ module API
         end
       end
 
-      on ':id' do |id|
+      on '/me' do
         on root do
           on get do
             begin

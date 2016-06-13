@@ -5,6 +5,7 @@ require_relative './packs/routes'
 require_relative './users/routes'
 
 Cuba.plugin Cuba::Safe
+Cuba.use Rack::Session::Cookie, secret: ENV['PACK_COOKIE_SECRET']
 
 Cuba.define do
   on 'bookmarks' do

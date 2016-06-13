@@ -18,15 +18,6 @@ scope do
     assert defined?(last_response.body['_id'])
   end
 
-  test 'returns an existing user' do
-    user = Repositories::User.create(name: 'Paco', email: 'p@co.co')
-
-    get "users/#{user._id}"
-
-    response = JSON.parse(last_response.body)
-    assert_equal user._id, BSON::ObjectId.from_string(response['_id']['$oid'])
-  end
-
   test 'returns 400 when name is missing' do |config|
     user = { email: 'p@co.co' }.to_json
 
@@ -41,11 +32,5 @@ scope do
     request '/users', config[:post].merge(input: user)
 
     assert_equal 400, last_response.status
-  end
-
-  test 'returns 404 when a user is not found' do
-    get '/users/123'
-
-    assert_equal 404, last_response.status
   end
 end
